@@ -1,19 +1,19 @@
 <html><head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
-    <title>Counting </title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Counting</title>
 
-  <style> /* CSS comment */
-    body { max-width: 440px; }
-    input { width: 50px }
-    .out {
-        font-size: 18px;
-        background: blue;
-        color: white;
-        text-align: center;
-        padding: 10px;
-    }
-  </style>
+<style> /* CSS comment */
+  body { max-width: 440px; }
+  input { width: 50px }
+  .out {
+      font-size: 18px;
+      background: blue;
+      color: white;
+      text-align: center;
+      padding: 10px;
+  }
+</style>
 </head>
 
 <body>   <!-- HTML comment: Modify all items marked xxx -->
@@ -22,7 +22,7 @@
 xxx 
 <input type="number" value="0" onchange="out.innerText=value">
 &emsp;
-<button onclick="increment()">Up</button>
+<button onclick="increment()">xxx</button>
 <p class="out">1</p>
 
 <hr>
@@ -37,9 +37,9 @@ xxx
 "use strict";
 // JavaScript comment
 function increment() {
-    let c = Number(out.innerText)+1
-    console.log("counter = "+c)
-    out.innerText = c
+  let c = Number(out.innerText)+1
+  console.log("counter = "+c)
+  out.innerText = c
 }
 document.querySelector('h2').innerText = document.title
 document.querySelector('pre').innerText = increment
