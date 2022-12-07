@@ -1,0 +1,19 @@
+str=inp.value
+
+[d0, ... data] = str.split("\n")
+
+keys = d0.split('\t')
+
+function toObject(x) {
+    let b = {}
+    for (let [i,s] of x.split('\t').entries())
+      b[keys[i]] = (isNaN(s)? s : Number(s))
+    return b
+  }
+
+str_object=data.map(toObject)
+
+-------------------------------
+const asArray = Object.entries(str_object);
+const filtered = asArray.filter(([key, value]) => typeof value === 'string');
+const justStrings = Object.fromEntries(filtered);

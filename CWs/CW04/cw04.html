@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" href="../images/avatar.png">
+    <title  > CW5 </title>
+
+  <style> /* CSS comment */
+    body { 
+      max-width: 400px; 
+      font-size: 14;
+    }
+   
+    pre{
+      font-style: italic;
+font-size: 14px;
+
+ }
+  </style>
+</head>
+
+<body>   <!-- HTML comment: Modify all items marked xxx -->
+
+<h2 style="color:green" ;style="font-family:'Courier New'">This text is not shown. Why?</h2>
+<b style="color:green" ;style="font-family:'Courier New'">Ali Hüseyin</b>
+
+<hr />
+<b>Sample code</b>
+<pre>This text is not shown. Why?</pre>
+
+<hr />
+<b>Output</b>
+<pre>This text is not shown. Why?</pre>
+<hr />
+
+
+<script>
+"use strict";
+// JavaScript comment
+let array =[0,1,2,3,4,5,6,7,8,9,10]
+let metin = "This Is a NICE car"
+let s = 'array =[0,1,2,3,4,5,6,7,8,9,10]\nmetin ="this is a nice car"\n\n';
+function print(arr,str){
+  arr.push(99)
+  s += 'array.push(99) -> '
+    +arr+'\n';
+  arr.pop()
+  s += 'array.pop() -> '
+    +arr+'\n';
+  s += 'array.join(" -- ") -> '
+    +arr.join(" -- ")+'\n';
+  let dt=new Date()
+  s +='dt.getFullYear+"/"+dt.getMonth+"/"+dt.getDay ->'
+  s +=dt.getFullYear()+"/"+dt.getMonth()+"/"+dt.getDay()+"\n"
+  s +="metin.toLowerCase()"+str.toLowerCase()+"\n"
+  s +="metin.toUpperCase()"+str.toUpperCase()+"\n"
+  s +="metin.split(' ')"+str.split(' ')+"\n"
+  s +='metin.replace("is","is not")'+str.replace("Is","is not")+"\n"
+  s += 'array.filter(x =>x%2==0) -> '
+    +arr.filter(x =>x%2==0)+'\n';
+  s += 'array.filter(x =>x%2!=0) -> '
+    +arr.filter(x =>x%2!=0)+'\n';
+  s += 'array.map(x =>x*x) -> '
+    +arr.map(x =>x*x)+'\n';
+  s += 'array.map(x =>x+10) -> '
+    +arr.map(x =>x+10)+'\n';
+   
+  return s;
+}
+
+document.querySelector('h2').innerText = document.title
+document.querySelector('pre').innerText = print
+document.querySelectorAll('pre')[1].innerText =print(array,metin)
+</script>
+
+</body>
+</html>
