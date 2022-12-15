@@ -86,8 +86,8 @@
       if (!r.ok) error(r.status)
       return r.json()
   }
-  // Location
-  var lat, lon;  //global values
+ 
+  var lat, lon;  
   async function askLocation() {
       let name = 'geolocation'
       let result = await navigator.permissions.query({name})
@@ -99,13 +99,13 @@
           .getCurrentPosition(getLocation1, error);
       }
   }
-  function getLocation2(p) { //Approximate
+  function getLocation2(p) { 
       console.log("ipinfo.io", p.city)
       let [x, y] = p.loc.split(',')
       lat = Number(x); lon = Number(y); 
       askWeather()
   }
-  function getLocation1(p) { //Accurate
+  function getLocation1(p) { 
       console.log("getCurrentPosition")
       lat = p.coords.latitude; lon = p.coords.longitude;
       askWeather()
@@ -120,21 +120,18 @@
       detay.innerText = ''
       gunes.innerText = ''
       let data = await toJSON(u)
-  //  fetch(u).then(r => r.json()).then(showWeather)
-  // }
-  // function showWeather(data) {
       let w = data.weather[0]; showIcon(w.icon)
       let celsius = convert(data.main.temp).toFixed(0)
       let hh = w.main+"  "+celsius+"°", {sys} = data
       let yy = data.name+', '+sys.country
-      hava.innerText = hh; yer.innerText = yy //---------
+      hava.innerText = hh; yer.innerText = yy
       lat = data.coord.lat; lon = data.coord.lon
       mahal.value = lat.toFixed(2)+", "+lon.toFixed(2)
       let wind = (3.6*data.wind.speed).toFixed(0)
       let pres = (0.750062*data.main.pressure).toFixed(0)
       const WIND = ['N','NE','E','SE','S','SW','W','NW','N']
       let d = (data.wind.deg/45).toFixed(0)
-      detay.innerText = hh  //+'\n'+yy +'\n['+mahal.value+"]"
+      detay.innerText = hh  
           +'\nWind  '+wind+' km/h '+WIND[d]
           +'\nPressure  '+pres+' mm'
           +'\nHumidity  %'+data.main.humidity
@@ -144,8 +141,6 @@
           +'\nSet  '+toHM(sunset+data.timezone)
           +'\nZone '+(data.timezone/3600)
       console.log(hh, yy, 'Wind '+data.wind.deg+'° '+WIND[d])
-
-
   }
   function showIcon(i) {
       const u = "https://openweathermap.org/img/w/"
@@ -163,9 +158,9 @@
       else return k;
   }
   function error(e) {
-      main.style.display = "none"; //hide
-      //refs.style.display = "none";
-      err.style.display = ''; //show
+      main.style.display = "none"; 
+      
+      err.style.display = ''; 
       throw e
   }
   function getAPIkey() {

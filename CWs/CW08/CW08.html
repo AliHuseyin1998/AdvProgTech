@@ -56,9 +56,9 @@
   </div>
   
   <div id="main">
-  <p id="yer">Karaköy, Turkey</p>
+  <p id="yer" style="font-family:'Courier New'">Karaköy, Turkey</p>
   <p><img id="icon" src="https://openweathermap.org/img/w/04d.png">
-  <span id="hava">Clouds  16°</span></p>
+  <span id="hava" style="font-family:'Courier New'">Clouds  16°</span></p>
   </div>
   <svg id="svg" width="450" height="150">
       <rect x="10" y="10" width="430" height="130"></rect>
@@ -66,11 +66,11 @@
       <line x1="215" y1="15" x2="215" y2="135"></line>
       <foreignObject x="10" y="10" width="450" height="150">
           <text x="145" y="55" fill="blue">
-              <div class="dar">
-                  <b>Detail</b>
-                  <pre id="detay">Clouds  16°<br>Wind  28 km/h SW<br>Pressure  758 mm<br>Humidity  %70</pre>
+              <div class="dar" style="font-family:'Courier New'">
+                  <b style="font-family:'Courier New'">Detail</b>
+                  <pre id="detay" style="font-family:'Courier New'">Clouds  16°<br>Wind  28 km/h SW<br>Pressure  758 mm<br>Humidity  %70</pre>
               </div>
-              <div class="dar">
+              <div class="dar" style="font-family:'Courier New'">
                   <b>Sun</b>
                   <pre id="gunes">Rise 08:22<br>Noon 12:59<br>Set  17:37<br>Zone 3</pre>
               </div>
@@ -80,23 +80,32 @@
   
   <hr>
   <div id="map" class="leaflet-container leaflet-touch leaflet-retina leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom" tabindex="0" style="position: relative;"><div class="leaflet-pane leaflet-map-pane" style="transform: translate3d(1px, 1px, 0px);"><div class="leaflet-pane leaflet-tile-pane"><div class="leaflet-layer " style="z-index: 1; opacity: 1;"><div class="leaflet-tile-container leaflet-zoom-animated" style="z-index: 18; transform: translate3d(0px, 0px, 0px) scale(1);"><img alt="" role="presentation" src="https://c.tile.openstreetmap.org/10/594/383.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(95px, -87px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://a.tile.openstreetmap.org/10/594/384.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(95px, 169px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://b.tile.openstreetmap.org/10/593/383.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-161px, -87px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://a.tile.openstreetmap.org/10/595/383.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(351px, -87px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://c.tile.openstreetmap.org/10/593/384.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-161px, 169px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://b.tile.openstreetmap.org/10/595/384.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(351px, 169px, 0px); opacity: 1;"></div></div></div><div class="leaflet-pane leaflet-shadow-pane"></div><div class="leaflet-pane leaflet-overlay-pane"></div><div class="leaflet-pane leaflet-marker-pane"></div><div class="leaflet-pane leaflet-tooltip-pane"></div><div class="leaflet-pane leaflet-popup-pane"><div class="leaflet-popup  leaflet-zoom-animated" style="opacity: 1; transform: translate3d(220px, 150px, 0px); bottom: -7px; left: -76px;"><div class="leaflet-popup-content-wrapper"><div class="leaflet-popup-content" style="width: 87px;">Karaköy, Turkey</div></div><div class="leaflet-popup-tip-container"><div class="leaflet-popup-tip"></div></div><a class="leaflet-popup-close-button" href="#close">×</a></div></div><div class="leaflet-proxy leaflet-zoom-animated" style="transform: translate3d(152188px, 98284px, 0px) scale(512);"></div></div><div class="leaflet-control-container"><div class="leaflet-top leaflet-left"><div class="leaflet-control-zoom leaflet-bar leaflet-control"><a class="leaflet-control-zoom-in" href="#" title="Zoom in" role="button" aria-label="Zoom in">+</a><a class="leaflet-control-zoom-out" href="#" title="Zoom out" role="button" aria-label="Zoom out">−</a></div></div><div class="leaflet-top leaflet-right"></div><div class="leaflet-bottom leaflet-left"></div><div class="leaflet-bottom leaflet-right"><div class="leaflet-control-attribution leaflet-control"><a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> | © OpenStreetMap contributors</div></div></div></div>
+  <div id="kod">
+    <b>New Functions</b>
+    <pre id="sample">var Map  <br>  function showMap(){ <br>let p = {lat:41, lng:29}<br> console.log('init at', p)<br>Map=L.map('map').setView(p, 10)<br>let u = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'<br> let attribution = '&copy; OpenStreetMap contributors'
+        L.tileLayer(u, {attribution}).addTo(Map)<br> }<br></br4> showMap()<br> var popup = L.popup()<br> .setLatLng([41, 29])<br> .setContent('Istanbul')<br> .openOn(Map);<br> function onMapClick(e) {<br> popup<br> .setLatLng(e.latlng)<br>.openOn(Map);<br> lat = e.latlng.lat;
+            lon = e.latlng.lng;<br> askWeather();<br>   }<br> Map.on('click', onMapClick);<br>
+            
+        
+        </pre>
+</div>
   <div>
   <p id="err" style="display: none;">You need an API key for openweathermap.org 
     <a href="https://openweathermap.org/appid" target="NewTab">here</a> 
   </p>
   </div>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css">
-  <!-- Make sure you put JS AFTER CSS -->
+
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
   <script>
   "use strict";
-  var Map   //global
-  var lat, lon;  //global values
+  var Map   
+  var lat, lon;  
   function showMap(){
       let p = {lat:41, lng:29}
       console.log('init at', p)
-      //L is global object from leaflet
-      Map=L.map('map').setView(p, 10) //setZoom(10)
+     
+      Map=L.map('map').setView(p, 10)
       let u = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
       let attribution = '&copy; OpenStreetMap contributors'
       L.tileLayer(u, {attribution}).addTo(Map)
@@ -120,19 +129,18 @@
       Map.setView([la,ln], 10)
   }
   
-  function toHM(t) { // t in seconds -- convert to minutes
-      //number of hours since midnight, in local time
-      let h = (t%86400)/3600  // 0<=h<24
-      let m = (h%1)*60        // 0<=m<60
+  function toHM(t) {
+      let h = (t%86400)/3600  
+      let m = (h%1)*60        
       let twoDigits = t => (t<10? '0' : '')+Math.trunc(t)
-      return twoDigits(h)+":"+twoDigits(m+0.5) //round
+      return twoDigits(h)+":"+twoDigits(m+0.5) 
   }
   async function toJSON(url) {
       let r = await fetch(url)
       if (!r.ok) error(r.statusText)
       return r.json()
   }
-  // Location
+  
   async function askLocation() {
       let name = 'geolocation'
       let result = await navigator.permissions.query({name})
@@ -144,18 +152,18 @@
           .getCurrentPosition(getLocation1, error);
       }
   }
-  function getLocation2(p) { //Approximate
+  function getLocation2(p) {
       console.log("ipinfo.io", p.city)
       let [x, y] = p.loc.split(',')
       lat = Number(x); lon = Number(y); 
       askWeather()
   }
-  function getLocation1(p) { //Accurate
+  function getLocation1(p) { 
       console.log("getCurrentPosition")
       lat = p.coords.latitude; lon = p.coords.longitude;
       askWeather()
   }
-  // Weather
+
   var accessKey;
   async function askWeather() {
       console.log(lat, lon); 
@@ -165,14 +173,11 @@
       detay.innerText = ''
       gunes.innerText = ''
       let data = await toJSON(url)
-  //  fetch(url).then(r => r.json()).then(showWeather)
-  // }
-  // function showWeather(data) {
       let w = data.weather[0]; showIcon(w.icon)
       let celsius = convert(data.main.temp).toFixed(0)
       let hh = w.main+"  "+celsius+"°", {sys} = data
       let regionNames = new Intl.DisplayNames(['en'], {type: 'region'});
-      let yy = data.name+', '+regionNames.of(sys.country);  // TR -> "Turkey"
+      let yy = data.name+', '+regionNames.of(sys.country);
       hava.innerText = hh; yer.innerText = yy
       lat = data.coord.lat; lon = data.coord.lon
       mahal.value = lat.toFixed(2)+", "+lon.toFixed(2)
@@ -180,7 +185,7 @@
       let pres = (0.750062*data.main.pressure).toFixed(0)
       const WIND = ['N','NE','E','SE','S','SW','W','NW','N']
       let d = (data.wind.deg/45).toFixed(0)
-      detay.innerText = hh  //+'\n'+yy +'\n['+mahal.value+"]"
+      detay.innerText = hh
           +'\nWind  '+wind+' km/h '+WIND[d]
           +'\nPressure  '+pres+' mm'
           +'\nHumidity  %'+data.main.humidity
@@ -190,7 +195,7 @@
           +'\nSet  '+toHM(sunset+data.timezone)
           +'\nZone '+(data.timezone/3600)
       console.log(hh, yy, 'Wind '+data.wind.deg+'° '+WIND[d])
-      askMap(lat,lon) // show map
+      askMap(lat,lon)
       popup.setContent(yy)
   }
   
@@ -201,18 +206,18 @@
   }
   function convert(kelvin){
       return (kelvin - 273.15); 
-      //return celsius*1.8 + 32
+
   }
-  // Interaction
+ 
   function askUser() {
     let k = prompt('Please enter openweather key:')
       if (!k) return '1e198835246bf67f6fdee02ed5f4786e';
       else return k;
   }
   function error(e) {
-      main.style.display = "none"; //hide
-      //refs.style.display = "none";
-      err.style.display = ''; //show
+      main.style.display = "none";
+    
+      err.style.display = '';
       throw e
   }
   function getAPIkey() {
@@ -224,7 +229,7 @@
              localStorage.keys = JSON.stringify(keys)
           }
           accessKey = keys.openweather
-      } else { //cannot use localStorage
+      } else {
           accessKey = askUser()
       }
   }
